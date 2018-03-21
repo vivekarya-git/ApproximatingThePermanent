@@ -2,13 +2,6 @@
 using namespace std;
 int main ()
 {
-    // char filename[100];
-    // cout << "Enter file name to compile ";
-    // cin.getline("JS_implementation.cpp", 100);
- 
-    // Build command to execute.  For example if the input
-    // file name is a.cpp, then str holds "gcc -o a.out a.cpp" 
-    // Here -o is used to specify executable file name
     string str = "g++ -std=c++11 -o JSobject JS_implementation.cpp";
     //str = str + " -o a.out JS_implementation.cpp";
  
@@ -20,7 +13,7 @@ int main ()
 
     if (remove("temp2.txt") == 0)
       printf("temp2.txt deleted successfully");
-   else
+    else
       printf("Unable to delete the file");
  
  
