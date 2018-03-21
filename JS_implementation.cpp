@@ -367,21 +367,21 @@ int main()
 		cout<<"approximated count of PM in given graph is "<< product<<endl;
 
 		ofstream fp;
-        fp.open("temp2.txt", ios::out | ios::ate | ios::app );
-        if (!fp) 
-        {
-            cerr << "Unable to open file temp2.txt";
-            exit(1);   // call system to stop
-        }
-        fp << product;
-        fp<<"\n";
-        fp.close();
+		fp.open("temp2.txt", ios::out | ios::ate | ios::app );
+		if (!fp) 
+		{
+		    cerr << "Unable to open file temp2.txt";
+		    exit(1);   // call system to stop
+		}
+		fp << product;
+		fp<<"\n";
+		fp.close();
 	}
 
-	cout<<"edgeSet is:"<<endl;
-	for(i=0; i<edgeSet.size(); i++)
-	{
-		cout<<edgeSet[i].first<<" "<< edgeSet[i].second<<endl;
-	}
+// 	cout<<"edgeSet is:"<<endl;
+// 	for(i=0; i<edgeSet.size(); i++)
+// 	{
+// 		cout<<edgeSet[i].first<<" "<< edgeSet[i].second<<endl;
+// 	}
 	return 0;
 }
