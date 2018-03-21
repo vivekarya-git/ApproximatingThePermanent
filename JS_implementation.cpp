@@ -159,7 +159,7 @@ void MarkovChain(vector< vector<int> >& adjList, float c, int T, int *a, int *b,
 		bool case2 = false;
 		bool case3 = false;
 		int t=0;
-		while(t <= n*n*n)//-------------------------------------???
+		while(t <= n*n*n)//-------------------------------------
 		{
 			int r = rand()%(edgeSet.size());//----------------------edgeSet
 			pair<int, int> edge = edgeSet[r];
@@ -260,21 +260,8 @@ int main()
 
     while (getline(fp, line))
 	{
-		cout<<"Splitting string \""<<line<<"\" into tokens:"<<endl;
-		// typedef tokenizer<char_separator<char>> tokenizer;
-	 //    //string s = "Boost C++ Libraries";
-	 //    char_separator<char> sep{" ", ":", ","};
-	 //    tokenizer tok{line, sep};
-	 //    int t2;
-	 //    for (tokenizer::iterator it = tok.begin(); it != tok.end(); ++it)
-	 //    {
-	 //    	cout << *it << '\n';
-		// 	string z=*it;
-		// 	t2= stoi(z);
-	 //    }
-
-
-		char_separator<char> sep(": ,");
+	    cout<<"Splitting string \""<<line<<"\" into tokens:"<<endl;
+	    char_separator<char> sep(": ,");
 	    tokenizer< char_separator<char> > tokens(line, sep);
 	    int flag=0;
 	    int t2;
@@ -327,9 +314,9 @@ int main()
 	
 	//cout<<"No. of edges"<<noOfEdges(adjList)<<endl;
 	
-	//pmExist = checkPerfectMatching(adjList, n);
-	//cout<< "pmExist:"<<pmExist<<endl;
-	pmExist = true;
+	pmExist = checkPerfectMatching(adjList, n);
+	cout<< "pmExist:"<<pmExist<<endl;
+	//pmExist = true;
 	if(pmExist == false)
 	{
 		cout<<"Graph doesn't contain perfect matching"<<endl;
@@ -358,20 +345,6 @@ int main()
 				int T = n*n*n*n;
 				int K_SizeMatching_Count = 0;
 				int Kplus1_SizeMatching_Count = 0;
-				// for(int j=0; j<T; j++)
-				// {
-				// 	matching = MarkovChain(adjList, c, T);
-				// 	if(matching.size() == k)
-				// 	{
-				// 		K_SizeMatching_Count++;
-				// 	}
-				// 	if(matching.size() == k+1)
-				// 	{
-				// 		Kplus1_SizeMatching_Count++;
-				// 	}
-
-				// }
-
 				MarkovChain(adjList, c, T, &K_SizeMatching_Count, &Kplus1_SizeMatching_Count, E, k, edgeSet, n);
 				
 				float p_K = (float)K_SizeMatching_Count/ (float)T;
